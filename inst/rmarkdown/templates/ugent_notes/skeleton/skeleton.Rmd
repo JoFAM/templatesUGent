@@ -1,0 +1,11 @@
+---
+author: Practice McPracticeFace
+course: Lessons of Life
+module: Exercises session 1
+
+output: templatesUGent::ugent_notes
+---
+
+# This is the actual title
+
+Here you can write your notes.
