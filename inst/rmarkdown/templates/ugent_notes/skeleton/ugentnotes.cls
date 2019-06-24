@@ -22,15 +22,15 @@
 %
 \RequirePackage[a4paper,portrait]{geometry}
 \RequirePackage{graphicx}
-\RequirePackage{tabularx}
+\RequirePackage{amsmath}
 \RequirePackage[pdfborder={0 0 0}]{hyperref}
+\RequirePackage[x11names]{xcolor}
 
 % Use Helvetica to stay as close as possible to Arial
 %\RequirePackage{helvet} 
 %\renewcommand{\familydefault}{\sfdefault}
 %\RequirePackage{sansmath} % gives helvetica math
 \RequirePackage{times} %load times new roman type 1 fonts
-
 
 % --- Class structure: layout issues
 %
@@ -63,8 +63,46 @@
 \global\let\@pname\Page
 \def\pname#1{\def\@pname{#1}}
 
+% --- Create the exercises environment
+% Make the exercise name changeable. This should be dependent upon 
+% language settings, but no bloody clue how to do that...
+\newcommand\Oefeningen{Oefeningen}
+\def\@exercisename{}
+\global\let\@exercisename\Oefeningen
+\def\exercisename#1{\def\@exercisename{#1}}
 
+% --- Definition exercise environment
 
+\newcounter{exctr}
+\newcounter{qcounter}
+ 
+
+\newenvironment{exercise}{%      define a custom environment
+   \bigskip\noindent%         create a vertical offset to previous material
+   \vfil\penalty-200\vfilneg % favor a page break before the line!
+   \refstepcounter{exctr}% increment the environment's counter
+   \noindent\textcolor{lightgray}{\rule{\textwidth}{1mm}} % Add a line
+   \textbf{\textsc{\@exercisename~\theexctr }}
+   \newline%
+   \smallskip
+  % Define a custom list environment in here. This works fine, and 
+  % enumerates using letters
+  \begin{list}{ 
+        \bfseries\theexctr.\arabic{qcounter}.
+    }{
+        \usecounter{qcounter}
+        \setlength{\labelwidth}{3em}
+        \setlength{\leftmargin}{3em}
+        \setlength{\labelsep}{0pt}
+        \setlength{\itemsep}{0pt}
+        \setlength{\listparindent}{0em}
+        \setlength{\topsep}{6pt}
+        \setlength{\itemindent}{0pt}
+    } 
+   }{\end{list}\textcolor{lightgray}{\rule{\textwidth}{1mm}}\par\bigskip\ignorespacesafterend}  %          create a vertical offset to following material
+\numberwithin{exctr}{section}
+
+% - Create the title using chapter.
 \newcommand\chapter[1]{
 	\vspace{36pt}
  	

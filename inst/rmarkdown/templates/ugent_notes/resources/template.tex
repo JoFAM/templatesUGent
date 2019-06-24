@@ -9,7 +9,23 @@
 \course{$course$}
 \author{$author$}
 
+% --- Some stuff that rmarkdown needs
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+% Pandoc syntax highlighting
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+% Reduce the font of the verbatim
+\makeatletter
+\renewcommand{\verbatim@font}{\footnotesize\ttfamily}
+\makeatother
 % -----------------------------------------------------------------------
 % Extra packages and settings
 % -----------------------------------------------------------------------
