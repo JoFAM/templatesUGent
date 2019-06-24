@@ -79,12 +79,13 @@
 
 \newenvironment{exercise}{%      define a custom environment
    \bigskip\noindent%         create a vertical offset to previous material
-   \vfil\penalty-200\vfilneg % favor a page break before the line!
+   \vfil\penalty-50\vfilneg % favor a page break before the line!
    \refstepcounter{exctr}% increment the environment's counter
    \noindent\textcolor{lightgray}{\rule{\textwidth}{1mm}} % Add a line
    \textbf{\textsc{\@exercisename~\theexctr }}
    \newline%
    \smallskip
+   \vfil\penalty+500\vfilneg
   % Define a custom list environment in here. This works fine, and 
   % enumerates using letters
   \begin{list}{ 
@@ -99,7 +100,9 @@
         \setlength{\topsep}{6pt}
         \setlength{\itemindent}{0pt}
     } 
-   }{\end{list}\textcolor{lightgray}{\rule{\textwidth}{1mm}}\par\bigskip\ignorespacesafterend}  %          create a vertical offset to following material
+   }{\end{list}\textcolor{lightgray}{\rule{\textwidth}{1mm}}
+   \par\bigskip\ignorespacesafterend
+   \vfil\penalty-50\vfilneg }  %          create a vertical offset to following material
 \numberwithin{exctr}{section}
 
 % - Create the title using chapter.
