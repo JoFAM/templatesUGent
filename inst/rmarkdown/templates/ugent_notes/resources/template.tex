@@ -1,15 +1,11 @@
-\documentclass[12pt]{ugentnotes}
-
-% -----------------------------------------------------------------------
-% Set the title, course, author for the exercises
-% You can leave title out. The rest should be filled in!
-% With extra you can add an extra line
-% -----------------------------------------------------------------------
-\module{$module$}
-\course{$course$}
-\author{$author$}
+\documentclass[12pt,
+$if(lang)$
+  $babel-lang$,
+$endif$]{ugentnotes}
 
 % --- Some stuff that rmarkdown needs
+\usepackage{amssymb}
+
 \providecommand{\tightlist}{%
 \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
@@ -26,6 +22,22 @@ $endfor$
 \makeatletter
 \renewcommand{\verbatim@font}{\footnotesize\ttfamily}
 \makeatother
+
+% Provide listings
+$if(listings)$
+\usepackage{listings}
+\newcommand{\passthrough}[1]{#1}
+$endif$
+
+% -----------------------------------------------------------------------
+% Set the title, course, author for the exercises
+% You can leave title out. The rest should be filled in!
+% With extra you can add an extra line
+% -----------------------------------------------------------------------
+\module{$module$}
+\course{$course$}
+\author{$author$}
+
 % -----------------------------------------------------------------------
 % Extra packages and settings
 % -----------------------------------------------------------------------
