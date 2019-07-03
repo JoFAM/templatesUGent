@@ -28,7 +28,8 @@ ugent_notes <- function(..., keep_tex = TRUE){
   
   fmt <- rmarkdown::pdf_document(..., keep_tex = keep_tex,
                                  template = res,
-                                 pandoc_args = "--top-level-division=chapter")
+                                 pandoc_args = c(
+                                   "--top-level-division=chapter"))
   fmt$inherits <- "pdf_document"
   fmt
   

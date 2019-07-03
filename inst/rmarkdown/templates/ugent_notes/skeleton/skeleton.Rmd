@@ -2,10 +2,29 @@
 author: Practice McPracticeFace
 course: Lessons of Life
 module: Exercises session 1
+lang: nl
 
 output: templatesUGent::ugent_notes
+header-includes: \exercisename{Exercises}
 ---
 
 # This is the actual title
 
 Here you can write your notes.
+
+## This is a section
+
+All RMarkdown tricks work with this template. You can add exercises like this:
+
+
+```{block, type="exercise"}
+\item This is question 1
+\item Here's another question
+```
+
+Keep in mind you can change the name of the exercises using
+
+```
+header-includes: \exercisename{Exercises}
+```
+in the preamble.
