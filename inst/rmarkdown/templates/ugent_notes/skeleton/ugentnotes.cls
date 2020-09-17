@@ -4,7 +4,7 @@
 % --- Class structure identification
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ugentnotes}[2019/06/23 v0.0.1 ugentnotes]
+\ProvidesClass{ugentnotes}[2020/09/17 v0.0.2 ugentnotes]
 
 % --- Class structure declaration of options
 %
@@ -40,6 +40,11 @@
 
 \newcommand{\Page}{page}
 \newcommand{\emptyline}{\hfill}
+
+\newcommand{\fullwidth}[1]{
+  \medskip
+  \par\rlap{\parbox{\textwidth}{#1}}
+}
 
 % --- Class structure: Definitions
 
@@ -79,13 +84,13 @@
 
 \newenvironment{exercise}{%      define a custom environment
    \bigskip\noindent%         create a vertical offset to previous material
-   \vfil\penalty-50\vfilneg % favor a page break before the line!
    \refstepcounter{exctr}% increment the environment's counter
+   \par\nobreak\@afterheading 
    \noindent\textcolor{lightgray}{\rule{\textwidth}{1mm}} % Add a line
    \textbf{\textsc{\@exercisename~\theexctr }}
-   \newline%
-   \smallskip
-   \vfil\penalty+500\vfilneg
+   \par\nobreak\@afterheading 
+   \medskip
+	 \par\nobreak\@afterheading 
   % Define a custom list environment in here. This works fine, and 
   % enumerates using letters
   \begin{list}{ 
@@ -101,8 +106,8 @@
         \setlength{\itemindent}{0pt}
     } 
    }{\end{list}\textcolor{lightgray}{\rule{\textwidth}{1mm}}
-   \par\bigskip\ignorespacesafterend
-   \vfil\penalty-50\vfilneg }  %          create a vertical offset to following material
+   \par\bigskip\ignorespacesafterend\nobreak
+   \nopagebreak[4] }  %          create a vertical offset to following material
 \numberwithin{exctr}{section}
 
 % - Create the title using chapter.

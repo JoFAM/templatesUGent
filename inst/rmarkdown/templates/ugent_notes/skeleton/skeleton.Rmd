@@ -6,6 +6,7 @@ lang: nl
 
 output: templatesUGent::ugent_notes
 header-includes: \exercisename{Exercises}
+                 \newcommand{\extra}{\fullwidth{\textit{Extra exercises:}}}
 ---
 
 # This is the actual title
@@ -19,8 +20,13 @@ All RMarkdown tricks work with this template. You can add exercises like this:
 
 ```{block, type="exercise"}
 \item This is question 1
+\item THis is question 2
+\extra
 \item Here's another question
 ```
+
+With the command `\fullwidth` you can include a paragraph in between 
+the questions. In this template this command is used in the preamble.
 
 Keep in mind you can change the name of the exercises using
 
