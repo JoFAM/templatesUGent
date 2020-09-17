@@ -11,8 +11,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' rmarkdown::draft("MyArticle.Rmd", template = "bw_exercise",
-#'                   package = "bwtemplate")
+#' rmarkdown::draft("MyArticle.Rmd", template = "ugent_notes",
+#'                   package = "templatesUGent")
 #' }
 #' @import rmarkdown
 #' @export
@@ -24,7 +24,7 @@ ugent_notes <- function(..., keep_tex = TRUE){
     package = "templatesUGent"
   )
   
-  if(res == "") stop("Couldn't find bw_exercise", call. = FALSE)
+  if(res == "") stop("Couldn't find ugent_notes", call. = FALSE)
   
   fmt <- rmarkdown::pdf_document(..., keep_tex = keep_tex,
                                  template = res,

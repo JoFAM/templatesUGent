@@ -19,9 +19,14 @@ This format is based on \code{rmarkdown::pdf_document()}, with a
 custom Pandox LaTeX template. It adapts a number of default values
 for some of its arguments (eg, \code{keep_tex = TRUE}).
 }
+\section{Warning}{
+
+This function is deprecated and replaced by \code{\link{ugent_notes}}
+}
+
 \examples{
 \dontrun{
 rmarkdown::draft("MyArticle.Rmd", template = "bw_exercise",
-                  package = "bwtemplate")
+                  package = "templatesUGent")
 }
 }

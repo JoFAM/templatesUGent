@@ -8,11 +8,14 @@
 #' @inheritParams rmarkdown::pdf_document
 #'
 #' @return An R Markdown output format.
+#' 
+#' @section Warning:
+#' This function is deprecated and replaced by \code{\link{ugent_notes}}
 #'
 #' @examples
 #' \dontrun{
 #' rmarkdown::draft("MyArticle.Rmd", template = "bw_exercise",
-#'                   package = "bwtemplate")
+#'                   package = "templatesUGent")
 #' }
 #' @import rmarkdown
 #' @export
@@ -32,3 +35,5 @@ bw_exercise <- function(..., keep_tex = TRUE){
   fmt
 
 }
+#' @section Warning:
+#' This function is deprecated and replaced by \code{\link{ugent_notes}}

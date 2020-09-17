@@ -25,6 +25,7 @@
 \RequirePackage{amsmath}
 \RequirePackage[pdfborder={0 0 0}]{hyperref}
 \RequirePackage[x11names]{xcolor}
+%\RequirePackage{enumitem}
 
 % Use Helvetica to stay as close as possible to Arial
 %\RequirePackage{helvet} 
@@ -97,8 +98,8 @@
         \bfseries\theexctr.\arabic{qcounter}.
     }{
         \usecounter{qcounter}
-        \setlength{\labelwidth}{3em}
-        \setlength{\leftmargin}{3em}
+        \setlength{\labelwidth}{10em}
+        \setlength{\leftmargin}{32pt}
         \setlength{\labelsep}{0pt}
         \setlength{\itemsep}{0pt}
         \setlength{\listparindent}{0em}
@@ -109,6 +110,11 @@
    \par\bigskip\ignorespacesafterend\nobreak
    \nopagebreak[4] }  %          create a vertical offset to following material
 \numberwithin{exctr}{section}
+
+% - make highlighting possible
+
+\newcommand{\hlitem}{\stepcounter{qcounter}\item[ \textbf{* \bfseries\theexctr.\arabic{qcounter}.~}]}
+
 
 % - Create the title using chapter.
 \newcommand\chapter[1]{

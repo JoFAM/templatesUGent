@@ -21,6 +21,7 @@ All RMarkdown tricks work with this template. You can add exercises like this:
 ```{block, type="exercise"}
 \item This is question 1
 \item THis is question 2
+\hlitem `\hlitem` allows you to highlight a question.
 \extra
 \item Here's another question
 ```

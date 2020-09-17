@@ -21,7 +21,7 @@ for some of its arguments (eg, \code{keep_tex = TRUE}).
 }
 \examples{
 \dontrun{
-rmarkdown::draft("MyArticle.Rmd", template = "bw_exercise",
-                  package = "bwtemplate")
+rmarkdown::draft("MyArticle.Rmd", template = "ugent_notes",
+                  package = "templatesUGent")
 }
 }
