@@ -1,9 +1,10 @@
 #' R Markdown output format for exercises
 #'
 #' This format is based on \code{rmarkdown::pdf_document()}, with a
-#' custom Pandox LaTeX template. It adapts a number of default values
-#' for some of its arguments (eg, \code{keep_tex = TRUE}).
-#'
+#' custom Pandox LaTeX template. The argument \code{keep_tex} is passed
+#' explicitly to make clear that the tex files can be saved for
+#' incorporation in a complete course.
+#' 
 #' @param ... arguments passed to \code{\link[rmarkdown]{pdf_document}()}
 #' @inheritParams rmarkdown::pdf_document
 #'
@@ -16,7 +17,7 @@
 #' }
 #' @import rmarkdown
 #' @export
-ugent_notes <- function(..., keep_tex = TRUE){
+ugent_notes <- function(..., keep_tex = FALSE){
   
   res <- system.file(
     "rmarkdown","templates","ugent_notes","resources",
