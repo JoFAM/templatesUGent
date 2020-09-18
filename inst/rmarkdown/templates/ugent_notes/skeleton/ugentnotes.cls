@@ -4,7 +4,7 @@
 % --- Class structure identification
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ugentnotes}[2020/09/17 v0.0.2 ugentnotes]
+\ProvidesClass{ugentnotes}[2020/09/18 v0.0.3 ugentnotes]
 
 % --- Class structure declaration of options
 %
@@ -94,13 +94,11 @@
 	 \par\nobreak\@afterheading 
   % Define a custom list environment in here. This works fine, and 
   % enumerates using letters
-  \begin{list}{ 
-        \bfseries\theexctr.\arabic{qcounter}.
-    }{
+  \begin{list}{\bfseries\theexctr.\arabic{qcounter}.}{
         \usecounter{qcounter}
-        \setlength{\labelwidth}{10em}
-        \setlength{\leftmargin}{32pt}
-        \setlength{\labelsep}{0pt}
+        \setlength{\labelwidth}{30em}
+        \setlength{\leftmargin}{33pt}
+        \setlength{\labelsep}{6pt}
         \setlength{\itemsep}{0pt}
         \setlength{\listparindent}{0em}
         \setlength{\topsep}{6pt}
@@ -113,7 +111,7 @@
 
 % - make highlighting possible
 
-\newcommand{\hlitem}{\stepcounter{qcounter}\item[ \textbf{* \bfseries\theexctr.\arabic{qcounter}.~}]}
+\newcommand{\hlitem}{\stepcounter{qcounter}\item[ \textbf{* \bfseries\theexctr.\arabic{qcounter}.}]}
 
 
 % - Create the title using chapter.
