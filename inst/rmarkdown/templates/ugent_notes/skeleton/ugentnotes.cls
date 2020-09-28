@@ -104,9 +104,8 @@
         \setlength{\topsep}{6pt}
         \setlength{\itemindent}{0pt}
     } 
-   }{\end{list}\textcolor{lightgray}{\rule{\textwidth}{1mm}}
-   \par\bigskip\ignorespacesafterend\nobreak
-   \nopagebreak[4] }  %          create a vertical offset to following material
+   }{\par\nopagebreak\fullwidth{\textcolor{lightgray}{\rule{\textwidth}{1mm}}}\end{list}\par\nopagebreak
+   \bigskip\ignorespacesafterend }  %          create a vertical offset to following material
 \numberwithin{exctr}{section}
 
 % - make highlighting possible
