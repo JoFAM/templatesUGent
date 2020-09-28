@@ -1,6 +1,6 @@
 Package: templatesUGent
 Title: R Markdown template collection for UGent
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     person(given = "Joris",
            family = "Meys",

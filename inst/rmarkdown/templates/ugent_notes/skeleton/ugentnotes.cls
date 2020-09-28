@@ -4,7 +4,7 @@
 % --- Class structure identification
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ugentnotes}[2020/09/18 v0.0.3 ugentnotes]
+\ProvidesClass{ugentnotes}[2020/09/28 v0.0.4 ugentnotes]
 
 % --- Class structure declaration of options
 %
